@@ -1,64 +1,67 @@
-# Vedika.io
+# Vedika
 
-[![npm version](https://img.shields.io/npm/v/xalen-sdk.svg)](https://www.npmjs.com/package/xalen-sdk)
-[![PyPI version](https://img.shields.io/pypi/v/xalen.svg)](https://pypi.org/project/xalen/)
+**Astrology intelligence infrastructure for developers and businesses.**
 
-**AI-Powered Astrology API** — The only B2B astrology API with natural language AI queries, voice, and 130+ computation endpoints.
+Vedika provides structured astrology calculations, grounded AI interpretation, and developer tooling through a dedicated API and SDKs. Vedika is a product of **Xalen Technology Pvt Ltd**.
 
-## What We Build
-
-- **200+ AI Models** — LLM, vision, audio, image generation, embeddings via OpenAI-compatible API
-- **130+ Astrology Endpoints** — Birth charts, dashas, yogas, doshas, compatibility across Vedic, Western, KP, and Vastu
-- **AI Chat Queries** — Ask questions in plain English, Hindi, and 14 Indian languages
-- **Vedika Ephemeris Precision** — Accurate planetary calculations with citation-verified accuracy
-- **Voice AI** — Multilingual voice astrology across 14 Indian languages
-
-## Quick Links
+## Start building
 
 | Resource | Link |
-|----------|------|
-| **Website** | [xalen.io](https://xalen.io) |
-| **Documentation** | [xalen.io/docs](https://xalen.io/docs) |
-| **Playground** | [xalen.io/playground](https://xalen.io/playground) |
-| **Pricing** | [xalen.io/pricing](https://xalen.io/pricing) |
+| --- | --- |
+| Website | [vedika.io](https://vedika.io) |
+| Documentation | [vedika.io/docs](https://vedika.io/docs) |
+| API reference | [api.vedika.io/openapi.json](https://api.vedika.io/openapi.json) |
+| SDKs | [vedika.io/sdks](https://vedika.io/sdks) |
+| Sandbox | [vedika.io/sandbox](https://vedika.io/sandbox) |
+| Status | [vedika.io/status](https://vedika.io/status) |
+| Support and feature requests | [vedika-community](https://github.com/vedika-io/vedika-community) |
 
-## Official SDKs
+## Official developer tools
 
-| Package | Install | Links |
-|---------|---------|-------|
-| **JavaScript SDK** | `npm install xalen-sdk` | [![npm](https://img.shields.io/npm/v/xalen-sdk.svg)](https://www.npmjs.com/package/xalen-sdk) |
-| **Python SDK** | `pip install xalen` | [![PyPI](https://img.shields.io/pypi/v/xalen.svg)](https://pypi.org/project/xalen/) |
-| **React Hooks** | `npm install xalen-react` | [![npm](https://img.shields.io/npm/v/xalen-react.svg)](https://www.npmjs.com/package/xalen-react) |
-| **MCP Server** | `npx xalen-mcp` | [![npm](https://img.shields.io/npm/v/xalen-mcp.svg)](https://www.npmjs.com/package/xalen-mcp) |
+| Tool | Install or source |
+| --- | --- |
+| JavaScript / TypeScript | [`npm install @vedika-io/sdk`](https://www.npmjs.com/package/@vedika-io/sdk) |
+| Python | [`pip install vedika-sdk`](https://pypi.org/project/vedika-sdk/) |
+| React | [`npm install @vedika-io/react`](https://www.npmjs.com/package/@vedika-io/react) |
+| MCP server | [`npx @vedika-io/mcp-server`](https://www.npmjs.com/package/@vedika-io/mcp-server) |
+| Android | [`vedika-sdk-android`](https://github.com/vedika-io/vedika-sdk-android) |
+| Swift | [`vedika-sdk-swift`](https://github.com/vedika-io/vedika-sdk-swift) |
 
-## Quick Start
-
-```python
-from xalen import XALEN
-
-client = XALEN(api_key='xln_live_...')
-response = client.chat.completions.create(
-    model='vedika-standard',
-    messages=[{'role': 'user', 'content': 'What is Shakata Yoga?'}]
-)
-print(response.choices[0].message.content)
-```
+### JavaScript
 
 ```javascript
-import XALEN from 'xalen-sdk';
+import { VedikaClient } from '@vedika-io/sdk';
 
-const client = new XALEN({ apiKey: 'xln_live_...' });
-const response = await client.chat.completions.create({
-  model: 'vedika-standard',
-  messages: [{ role: 'user', content: 'Analyze planetary transits' }],
+const vedika = new VedikaClient({
+  apiKey: process.env.VEDIKA_API_KEY,
 });
 ```
 
-## Support
+### Python
 
-- **Email:** support@xalen.io
-- **Docs:** https://xalen.io/docs
+```python
+import os
+from vedika import VedikaClient
+
+vedika = VedikaClient(api_key=os.environ["VEDIKA_API_KEY"])
+```
+
+Keep live keys on the server. Do not embed them in browser, mobile, theme, or public repository code.
+
+## Product boundaries
+
+- **Vedika** is the astrology intelligence API. Vedika integrations use `api.vedika.io`, Vedika SDKs, and `vk_…` keys.
+- **XALEN Ephemeris** is the open-source astronomical computation engine used by Vedika. Its source is available at [`xalen-ephemeris`](https://github.com/vedika-io/xalen-ephemeris).
+- **Xalen** is the parent company's broader AI platform. It has a separate API, account, SDK, documentation, and key namespace at [xalen.io](https://xalen.io).
+
+Using XALEN Ephemeris or being owned by Xalen Technology does not make the Vedika API and Xalen API interchangeable.
+
+## Community and support
+
+Use [`vedika-community`](https://github.com/vedika-io/vedika-community) for public bug reports, documentation feedback, integration questions, and feature requests.
+
+For account, billing, or private security matters, use [Vedika support](https://vedika.io/contact) instead of posting sensitive information publicly.
 
 ---
 
-**XALEN Technology Pvt Ltd, Pune, India**
+Vedika is developed and operated by **Xalen Technology Pvt Ltd**.
